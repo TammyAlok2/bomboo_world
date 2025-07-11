@@ -1,0 +1,12 @@
+
+
+
+
+{
+  "projects": {
+    "default": "bombooworld-ba410",
+    "production": "bombooworld-ba410"
+  },
+  "targets": {},
+  "etags": {}
+}
