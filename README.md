@@ -1,6 +1,4 @@
-# Create README.md content for the Creative Interior e-commerce application
 
-readme_content = """
 # 🛋️ Bomboo World – E-commerce Platform
 
 **Bomboo World** is a modern, scalable e-commerce application focused on the home and office decor industry. It offers a complete set of features for both admins and users to manage and purchase interior design products effortlessly.
