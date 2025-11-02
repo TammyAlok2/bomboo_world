@@ -33,7 +33,7 @@ const prodOptions = {
   sameSite: 'None',
   maxAge: 7 * 24 * 60 * 60 * 1000,
   path: "/",
-  domain: process.env.FRONTEND_URL || process.env.FRONTEND_ADMIN_URL
+  domain: process.env.FRONTEND_URL_PROD || process.env.FRONTEND_ADMIN_URL_PROD
 
 };
 
