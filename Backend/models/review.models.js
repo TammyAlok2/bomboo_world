@@ -34,7 +34,7 @@ schema.pre(/^find/, function(next) {
     { path: 'user', select: 'name email' },
     { path: 'product', select: 'name images price' }
   ]);
-  next();
+
 });
 
 

@@ -113,11 +113,6 @@ productSchema.virtual("numOfReviews").get(function () {
 // });
 
 // Middleware to update `updatedAt` on save
-productSchema.pre("save", function (next) {
-  //  mongoose.set('debug', true);
-  this.updatedAt = Date.now();
-  next();
-});
 
 // Middleware to update average rating after saving a review
 // productSchema.post("save", async function (doc, next) {

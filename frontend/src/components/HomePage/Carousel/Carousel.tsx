@@ -9,7 +9,6 @@ import Image from "next/image";
 
 const FullScreenCarousel = () => {
   const slides = [
-    "/images/CarouselImage/CM.jpg",
     "/images/CarouselImage/newimg/caroselimg1.jpeg",
     "/images/CarouselImage/newimg/caroselimg2.jpeg",
     "/images/CarouselImage/newimg/caroselimg3.jpeg",

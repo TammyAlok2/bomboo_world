@@ -42,11 +42,6 @@ const categorySchema = new mongoose.Schema(
   }
 );
 
-// Middleware to update `updatedAt` on save
-categorySchema.pre("save", function (next) {
-  this.updatedAt = Date.now();
-  next();
-});
 
 const Category = mongoose.model("Category", categorySchema);
 

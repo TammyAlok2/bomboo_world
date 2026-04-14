@@ -12,6 +12,14 @@ const geistSans = localFont({
   weight: "100 900",
 });
 
+export const metadata: Metadata = {
+ icons:{
+icon: "/bomboo.svg",
+ },
+  title: "Bomboo World - An Ecommerce Application",
+  description: "Bomboo World E-commerce aims to improve greenary in biosphere",
+};
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",

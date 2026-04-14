@@ -133,6 +133,7 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
  */
 export const googleSignup = asyncHandler(async (req, res, next) => {
   const { email, password, role, name, _id } = req.body;
+  console.log(req.body)
 
   // Validate request body
   if (!email || !password || !role) {
@@ -147,7 +148,7 @@ export const googleSignup = asyncHandler(async (req, res, next) => {
       email,
       password
     );
-    console.log("user creddentioal ", userCredential);
+    console.log("user creddentioal ", userCredential.user.uid);
 
     // Send email verification
     await sendEmailVerification(userCredential.user);
@@ -160,7 +161,7 @@ export const googleSignup = asyncHandler(async (req, res, next) => {
     });
 
     const token = await UserData.generateJWTToken();
-    // console.log(token);
+    console.log(token);
     // set cookie options do not send cookie on register 
     //  res.cookie("token", token, cookieOptions);
 
