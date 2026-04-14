@@ -55,7 +55,8 @@ export const useAuthStore = create<AuthState>((set) => ({
    //   console.log(response)
       set({ user: response.data.data.user ,isLoggedIn:true});
       
-      //const token = response.data.data.token;//
+      const token = response.data.data.token;
+      localStorage.setItem("token", token);
      
       if (response?.data?.success) {
        toast.success('Login Successfully ')
@@ -65,7 +66,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     } catch (error: unknown) {
 
       if (axios.isAxiosError(error)) {
-        console.log(error?.response)
+       
        toast.error( 'Email Not Verified || Wrong Credentials');
       } else {
        toast.error( 'Email Not Verified || Wrong Credentials');
@@ -93,7 +94,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   logout: async () => {
     try {
       const response = await axiosInstance.post(`auth/logout`,);
-      console.log(response)
+
       set({ user: null });
       localStorage.clear()
 
@@ -126,8 +127,10 @@ export const useAuthStore = create<AuthState>((set) => ({
   googleSignIn: async (data:any) => {
     try {
       const response = await axiosInstance.post(`auth/google-signin`,data);
-     // const token = response.data.data.token;
+      const token = response.data.data.token;
        set({ user: response.data.data.user ,isLoggedIn:true});
+        localStorage.setItem("token", token);
+
    
       return response;
     } catch (error: unknown) {

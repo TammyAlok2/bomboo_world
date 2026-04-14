@@ -223,7 +223,7 @@ const Footer = () => {
           <div className="py-8">
             <p className="text-center text-base text-white dark:text-white">
             &copy; {" "}
-            Copyright 2025 | All Right Reserved 
+            Copyright {new Date().getFullYear()} | All Right Reserved 
             
             </p>
           </div>

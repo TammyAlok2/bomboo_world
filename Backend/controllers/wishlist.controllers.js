@@ -7,9 +7,9 @@ import AppResponse from '../utils/AppResponse.js';
 // Add product to wishlist
 export const addProductToWishlist = asyncHandler(async (req, res, next) => {
   const { productId } = req.params;
-  console.log(productId)
+
   const userId = req.user.id;
-  console.log(userId)
+
 
   // Validate product ID
   if (!productId) {
@@ -41,7 +41,7 @@ export const addProductToWishlist = asyncHandler(async (req, res, next) => {
 // Remove product from wishlist
 export const removeProductFromWishlist = asyncHandler(async (req, res, next) => {
   const { productId } = req.params;
-  console.log(productId)
+
   const userId = req.user.id;
 
   // Validate product ID

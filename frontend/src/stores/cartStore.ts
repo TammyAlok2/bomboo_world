@@ -164,7 +164,7 @@ export const useCartStore = create<CartStore>()(
             const response = axiosInstance.delete("user/clearCart", {
               withCredentials: true,
             });
-            console.log(response);
+         
           } catch (error) {
             console.error("Failed to clear cart:", error);
           }
@@ -196,7 +196,7 @@ export const useCartStore = create<CartStore>()(
                 }
               );
 
-              console.log(`Successfully synced product: ${item.product._id}`);
+          
             } catch (itemSyncError) {
               console.error(
                 `Failed to sync product ${item.product._id}:`,
@@ -205,7 +205,7 @@ export const useCartStore = create<CartStore>()(
             }
           }
 
-          console.log("Cart synchronization completed");
+          
         } catch (overallError) {
           console.error("Overall cart synchronization failed", overallError);
         }

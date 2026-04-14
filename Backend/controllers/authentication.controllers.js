@@ -86,7 +86,6 @@ export const googleLogin = asyncHandler(async (req, res, next) => {
     user.verifyEmail = true; // Ensure your schema includes this field
     await user.save();
 
-    res.cookie('token', token, cookieOptions);
 
     // Respond with success
     res
@@ -148,7 +147,6 @@ export const googleSignup = asyncHandler(async (req, res, next) => {
       email,
       password
     );
-    console.log("user creddentioal ", userCredential.user.uid);
 
     // Send email verification
     await sendEmailVerification(userCredential.user);
@@ -161,7 +159,7 @@ export const googleSignup = asyncHandler(async (req, res, next) => {
     });
 
     const token = await UserData.generateJWTToken();
-    console.log(token);
+
     // set cookie options do not send cookie on register 
     //  res.cookie("token", token, cookieOptions);
 
@@ -172,7 +170,8 @@ export const googleSignup = asyncHandler(async (req, res, next) => {
         new AppResponse(
           200,
           userCredential,
-          `${role} created successfully and Verify your email.`
+          `${role} created successfully and Verify your email.`,
+          token
         )
       );
   } catch (error) {
@@ -295,7 +294,6 @@ export const googleSignIn = asyncHandler(async (req, res) => {
       // Generate token for new user
       const token = await user.generateJWTToken();
 
-      res.cookie("token", token, cookieOptions);
       return res
         .status(200)
         .json(new AppResponse(200, { user, token }, "User Registered Successfully"));
@@ -303,7 +301,7 @@ export const googleSignIn = asyncHandler(async (req, res) => {
 
     // For existing user
     const token = await user.generateJWTToken();
-    res.cookie("token", token, cookieOptions);
+  
     return res
       .status(200)
       .json(new AppResponse(200, { user, token }, "User Login Successfully"));

@@ -35,7 +35,7 @@ const Wishlist: React.FC<WishlistTitleProps> = ({ wishlistTitle }) => {
     try {
       setIsLoading(true);
       const response = await fetchWishlist();
-      console.log(response);
+   
     } catch (error) {
       console.error("Failed to fetch wishlist", error);
     } finally {
@@ -59,8 +59,7 @@ const Wishlist: React.FC<WishlistTitleProps> = ({ wishlistTitle }) => {
     }
   };
 
-  // Debug logging
-  console.log("Wishlist items:", wishlist);
+
 
   // Loader component
   const Loader = () => (

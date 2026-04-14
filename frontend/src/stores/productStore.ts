@@ -43,7 +43,7 @@ export const useProductDataStore = create<ProductDataStoreState>((set) => ({
                 .join('&');
                 const url = `admin/allProducts${queryString ? `?${queryString}` : ''}`;
                 const response = await axiosInstance.get(url);
-            console.log(response.data.data.totalProducts);
+            
             set({ product: response.data.data.products });
             
             return response.data.data;

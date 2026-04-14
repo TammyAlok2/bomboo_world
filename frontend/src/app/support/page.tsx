@@ -1,10 +1,11 @@
+import Contact from '@/components/HomePage/Contact'
 import React from 'react'
 
 const Support = () => {
   return (
-    <div className='flex h-screen items-center justify-center font-semibold text-[2rem] text-center text-gray-medium'>
-      Coming Soon...
-    </div>
+   <div className="w-full overflow-hidden mt-16 md:mt-24">
+<Contact/>
+ </div> 
   )
 }
 

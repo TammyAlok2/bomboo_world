@@ -43,7 +43,7 @@ export const useCouponStore = create<CouponState>((set) => ({
     set({ loading: true, error: null });
     try {
       const response = await axiosInstance.post('user/applyCoupon', { code });
-      console.log(response)
+      
       set((state) => ({
         coupons: state.coupons.map((coupon) =>
           coupon.code === code ? { ...coupon, ...response.data.data } : coupon

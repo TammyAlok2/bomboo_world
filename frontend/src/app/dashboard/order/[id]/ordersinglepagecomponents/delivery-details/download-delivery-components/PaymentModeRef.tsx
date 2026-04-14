@@ -8,7 +8,7 @@ interface PaymentModeRefProps{
 }
 
 const PaymentModeRef:React.FC<PaymentModeRefProps> = ({ allOrders }) => {
-  console.log("allOrders: ", allOrders);
+
   return (
     <div className="flex justify-between items-center mb-4 opacity-[.8]">
       <p className="font-semibold">Payment Mode</p>

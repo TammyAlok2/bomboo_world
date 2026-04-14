@@ -1,50 +1,25 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { PROTECTED_ROUTES, PUBLIC_ROUTES } from "@/lib/routeConfig";
 
 export function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname; // k
+  const path = request.nextUrl.pathname;
 
-  // This is the correct way to access cookies in middleware
-  const token = request.cookies.get("token")?.value || request.cookies.get("next-auth.session-token");
-console.log(token)
+  // Check if cookies have token (fallback for server-side token if needed)
+  const token = request.cookies.get("token")?.value;
 
+  // Check if route is protected
+  const isProtected = PROTECTED_ROUTES.some(
+    (route) => path === route || path.startsWith(route + "/")
+  );
 
-  // Public paths that do not require authentication
-  const publicPaths = ["/signin", "/signup", "/forget"];
-
-  // Protected paths that require authentication
-  const protectedPaths = ["/checkout", "/dashboard", "/cart/checkout"];
-
-  // Special handling for cart routes
-  if (path === "/cart") {
-    // Allow access to main cart page for both logged-in and non-logged-in users
+  // If protected route and no token, allow frontend to handle (client-side check will redirect)
+  // This is a safety net in case client-side check fails
+  if (isProtected && !token) {
+    // Let it pass - client-side RouteGuard will handle the redirect
     return NextResponse.next();
   }
 
-  // Check if the current path matches exactly or starts with the public paths
-  const isPublicPath = publicPaths.some(
-    (p) =>
-      path === p ||
-      (path.startsWith(`${p}/`) &&
-        !protectedPaths.some((pp) => path.startsWith(pp)))
-  );
-
-  // Check if the current path matches exactly or starts with the protected paths
-  const isProtectedPath = protectedPaths.some(
-    (p) => path === p || path.startsWith(`${p}/`)
-  );
-
-  // If the user is logged in and tries to access a public path, redirect to home
-  if (isPublicPath && token) {
-    return NextResponse.redirect(new URL("/", request.url));
-  }
-
-  // If the user is not logged in and tries to access a protected path, redirect to login
-  if (isProtectedPath && !token) {
-    return NextResponse.redirect(new URL("/signin", request.url));
-  }
-
-  // Allow the request to proceed if none of the above conditions are met
   return NextResponse.next();
 }
 

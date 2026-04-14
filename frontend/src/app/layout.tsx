@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from '@/components/HomePage/Navbar';
 import Footer from "@/components/Footer";
-import AuthProvider from "./AuthProvider"; // Adjust the import path based on where you create the file
+import AuthProvider from "./AuthProvider";
+import RouteGuard from "@/components/RouteGuard";
 import {Toaster} from 'react-hot-toast';
 
 const geistSans = localFont({
@@ -35,10 +36,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
-          <Navbar />
-          <Toaster />
-          {children}
-          <Footer />
+          <RouteGuard>
+            <Navbar />
+            <Toaster />
+            {children}
+            <Footer />
+          </RouteGuard>
         </AuthProvider>
       </body>
     </html>

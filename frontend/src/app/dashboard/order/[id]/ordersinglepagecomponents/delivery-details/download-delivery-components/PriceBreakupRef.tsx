@@ -6,7 +6,7 @@ interface PriceBreakupRefProps{
 }
 
 const PriceBreakupRef:React.FC<PriceBreakupRefProps> = ({ orderDetails }) => {
-  console.log("hamara data: ", orderDetails)
+
   return (
     <div className="mb-4">
       <h2 className="text-[7rem] font-semibold opacity-[.8]">Price Breakup</h2>

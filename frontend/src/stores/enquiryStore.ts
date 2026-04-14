@@ -25,7 +25,7 @@ export const useEnquiryStore = create<EnquiryStore>((set, get) => ({
     addEnquiry: async (data) => {
         try {
             const response = await axiosInstance.post('admin/add-enquiry', data);
-            console.log("add enquiry response: ", response)
+
             const newEnquiry = response.data.data;
             set((state) => ({
                 enquiries: [...state.enquiries, newEnquiry],
