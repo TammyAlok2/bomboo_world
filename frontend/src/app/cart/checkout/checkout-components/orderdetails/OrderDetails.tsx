@@ -379,13 +379,13 @@ export default function OrderDetails() {
                 />
                 <span className="ml-2 text-sm">Cash on Delivery</span>
               </label>
-              <label className="flex items-center">
+              {/* <label className="flex items-center">
                 <CustomRadioButton
                   selected={selectedMode === "Pay Online"}
                   onChange={() => handleSelection("Pay Online")}
                 />
                 <span className="ml-2 text-sm">Pay Online</span>
-              </label>
+              </label> */}
             </div>
           </div>
         </div>
@@ -418,7 +418,7 @@ export default function OrderDetails() {
               !canProceedWithOrder() || isProcessing
                 ? "opacity-50 cursor-not-allowed"
                 : "opacity-80 hover:opacity-90"
-            } bg-orange-orange500 text-white py-2 rounded-lg text-lg flex justify-center items-center`}
+            }  bg-medium_primary text-white py-2 rounded-lg text-lg flex justify-center items-center `}
           >
             {isProcessing ? (
               <span className="inline-block animate-spin rounded-full h-6 w-6 border-t-2 border-white" />
