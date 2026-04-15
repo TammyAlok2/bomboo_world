@@ -1,9 +1,10 @@
 import { Blog } from "@/types/blog";
 import Image from "next/image";
+import Link from "next/link";
 
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
-  const { title, image, paragraph, author, tags, publishDate } = blog;
+  const { title, image, paragraph, author, tags, publishDate, id } = blog;
   return (
     <>
       <div className="group relative overflow-hidden bg-white [box-shadow:0_0_0.5rem_0_lightgray] rounded-[.5rem] duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark max-[767px]:w-[22rem] max-[767px]:mx-auto max-[470px]:w-[100%]">
@@ -17,11 +18,12 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
         </div>
         <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
           <h3>
-            <div
+            <Link
+              href={`/blog-details/${id}`}
               className="mb-4 block text-xl truncate font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl cursor-pointer"
             >
               {title.substring(0,43)}
-            </div>
+            </Link>
           </h3>
           <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10">
             {paragraph.substring(0, 150) + '...'}

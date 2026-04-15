@@ -12,4 +12,8 @@ export type Blog = {
   author: Author;
   tags: string[];
   publishDate: string;
+  category: string;
+  content: string; // HTML or JSX string for detailed content
+  readTime: string; // e.g., "5 min read"
+  views: number;
 };

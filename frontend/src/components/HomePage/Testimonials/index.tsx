@@ -22,8 +22,8 @@ const Testimonials = () => {
     <section className="dark:bg-bg-color-dark relative z-10 py-16 md:py-20 lg:py-28">
       <div className="bg-gray-light p-[4rem] max-[464px]:p-[1.5rem] rounded-lg overflow-hidden">
         <SectionTitle
-          title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          title="What Our Clients Say"
+          paragraph="Discover how we have transformed their businesses and helped them achieve their goals through our innovative solutions and dedicated support."
           center
         />
 

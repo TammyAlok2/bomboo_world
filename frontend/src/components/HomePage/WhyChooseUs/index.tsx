@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const WhyChooseUs = () => {
   return (
@@ -41,7 +42,10 @@ const WhyChooseUs = () => {
               technology to create solutions that resonate with your goals.
             </p>
             <button className="mt-6 px-6 py-3 text-white bg-primary rounded-lg shadow hover:bg-green-600 transition">
+              <Link href="/about" className="text-white font-medium">
               Learn More →
+              </Link>
+              
             </button>
           </div>
         </div>

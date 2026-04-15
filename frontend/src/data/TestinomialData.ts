@@ -4,37 +4,37 @@ export const testimonialData: Testimonial[] = [
     {
       id: 1,
       name: "Alok Tamrakar ",
-      designation: "Bottle User ",
+      designation: "Bomboo Bottle Purchaser ",
       content:
-        "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+        "Bomboo Bottle is a game-changer! The quality and design are top-notch. I love using it for my daily hydration needs. Highly recommend it to everyone!",
       image: "/images/TestimonialImage/Men1.jpg",
       star: 5,
     },
     {
       id: 2,
       name: "KamalJeet Singh",
-      designation: "Diary User ",
+      designation: "Bomboo Diary Purchaser ",
       content:
-        "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-      image: "/images/TestimonialImage/Men1.jpg",
+        "Bomboo Diary is a game-changer! The quality and design are top-notch. I love using it for my daily journaling needs. Highly recommend it to everyone!",
+      image: "/images/TestimonialImage/Men2.jpg",
       star: 5,
     },
     {
       id: 3,
       name: "Pavan Prajapati ",
-      designation: "Watch User ",
+      designation: "Bomboo Cups Purchaser ",
       content:
-        "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-      image: "/images/TestimonialImage/Men1.jpg",
+        "Bomboo Cups is a game-changer! The quality and design are top-notch. I love using it for my daily hydration needs. Highly recommend it to everyone!",
+      image: "/images/TestimonialImage/Men3.jpg",
       star: 5,
     },
     {
       id: 4,
       name: "Anjali Prajapati ",
-      designation: "Watch User ",
+      designation: "Bomboo Comb Purchaser ",
       content:
-        "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-      image: "/images/TestimonialImage/Men1.jpg",
+        "Bomboo Comb is a game-changer! The quality and design are top-notch. I love using it for my daily grooming needs. Highly recommend it to everyone!",
+      image: "/images/TestimonialImage/Women1.jpg",
       star: 5,
     },
   ];
